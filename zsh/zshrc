@@ -1,6 +1,4 @@
 # inspired by @holman's zsh config
-PATH=$HOME/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$HOME/bin:/usr/local/share/npm/bin:$PATH
-
 export ZSH=$HOME/.dotfiles
 
 export PROJECTS=~/code
@@ -15,4 +13,4 @@ fi
 autoload -U compinit
 compinit
 
-for config_file ($ZSH/**/completion.sh) source $config_file
+#for config_file ($ZSH/**/completion.sh) source $config_file

@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+export INSTANCE_TAG=$1
+
+export INSTANCE_KEY=$2
+
+export INSTANCE_DNS=$(ec2-describe-instances --filter tag:Name=$INSTANCE_TAG | awk '/INSTANCE/{print $4}')
+
+echo "Connecting to $INSTANCE_DNS"
+
+if [ -n "$INSTANCE_KEY" ]
+then
+  ssh root@$INSTANCE_DNS -i $INSTANCE_KEY
+else
+  ssh root@$INSTANCE_DNS
+fi
