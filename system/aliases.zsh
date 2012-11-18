@@ -10,11 +10,11 @@ then
 fi
 
 # use MacVim
-mvim_path=$(which mvim)
-if [[ -f $mvim_path ]]
-then
-  alias vim=$mvim_path
-fi
+#mvim_path=$(which mvim)
+#if [[ -f $mvim_path ]]
+#then
+#  alias vim=$mvim_path
+#fi
 
 # flush mac dns cache
 dscacheutil_path=$(which dscacheutil)
