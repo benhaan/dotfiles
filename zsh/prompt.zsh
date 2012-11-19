@@ -112,5 +112,5 @@ export PROMPT=$'\n%{%f%b%k%}$(build_prompt)\n> '
 #}
 
 precmd() {
-  title "zsh" "%n@%m" "%55<...<%~"
+  title "zsh" "%n" "%55<...<%~"
 }
