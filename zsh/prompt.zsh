@@ -102,15 +102,20 @@ git_branch() {
   echo $(/usr/local/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
 }
 
+todos() {
+  num=$(osascript ~/todo-count.scpt)
+  echo "$num todo's"
+}
 
 #export PROMPT=$'\nin $(directory_name) $(git_dirty)$(need_push)\n› '
 export PROMPT=$'\n%{%f%b%k%}$(build_prompt)\n> '
 
 
-#set_prompt () {
-#  export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
-#}
+set_prompt () {
+  export RPROMPT="%{$fg_bold[cyan]%}$(todos)%{$reset_color%}"
+}
 
 precmd() {
   title "zsh" "%n" "%55<...<%~"
+  set_prompt
 }
