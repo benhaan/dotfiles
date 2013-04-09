@@ -4,6 +4,13 @@ autoload colors && colors
 CURRENT_BG='NONE'
 SEGMENT_SEPARATOR='⮀'
 
+if (( $+commands[git]))
+then
+  git="$commands[git]"
+else
+  git="/usr/bin/git"
+fi
+
 prompt_segment() {
   local bg fg
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
@@ -31,7 +38,7 @@ prompt_end() {
 }
 
 git_dirty() {
-  st=$(/usr/local/bin/git status 2>/dev/null | tail -n 1)
+  st=$($git status 2>/dev/null | tail -n 1)
   if [[ $st == "" ]]
   then
     # This isn't a git repo, so do nothing :-)
@@ -46,12 +53,12 @@ git_dirty() {
 }
 
 git_prompt_info () {
-  ref=$(/usr/local/bin/git symbolic-ref HEAD 2>/dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
+  ref=$($git symbolic-ref HEAD 2>/dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
   echo -n "${ref/refs\/heads\//⭠ }"
 }
 
 unpushed () {
-  /usr/local/bin/git cherry -v @{upstream} 2>/dev/null
+  $git cherry -v @{upstream} 2>/dev/null
 }
 
 need_push () {
@@ -99,7 +106,7 @@ build_prompt() {
 
 
 git_branch() {
-  echo $(/usr/local/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+  echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
 }
 
 

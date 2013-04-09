@@ -1,11 +1,11 @@
-# Use hub as git wrapper if it's installed
-hubified=$(which hub)
-if [[ -f $hubified ]]
+if (( $+commands[git]))
 then
-  alias git=$hubified
+  git="$commands[git]"
+else
+  git="/usr/bin/git"
 fi
 
-alias g='/usr/local/bin/git' # For the rare times I need plain git.. Thanks gerrit :-/
+alias g="$git" # For the rare times I need plain git.. Thanks gerrit :-/
 alias gst='git status -sb'
 alias gb='git branch'
 alias grm='git status | grep deleted | awk "{print \$3}" | xargs git rm'
@@ -15,3 +15,10 @@ alias gca='git commit -a'
 alias gau='git add -u'
 alias gd='git diff'
 alias gdt='git difftool'
+
+# Use hub as git wrapper if it's installed
+hubified=$(which hub)
+if [[ -f $hubified ]]
+then
+  alias git=$hubified
+fi
