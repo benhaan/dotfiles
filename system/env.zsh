@@ -1,4 +1,4 @@
-export EDITOR="mvim"
+export EDITOR="subl"
 export NODE_PATH="/usr/local/share/npm/lib/node_modules"
 
 if [[ -d ~/.ec2 ]]
