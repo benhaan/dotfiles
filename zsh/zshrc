@@ -1,4 +1,7 @@
 # inspired by @holman's zsh config
+
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
 export ZSH=$HOME/.dotfiles
 
 export PROJECTS=~/code

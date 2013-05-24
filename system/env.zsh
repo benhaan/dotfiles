@@ -12,5 +12,3 @@ then
   export AWS_ELB_HOME="/usr/local/Library/LinkedKegs/elb-tools/jars"
   export AWS_RDS_HOME="/usr/local/Library/LinkedKegs/rds-command-line-tools/jar"
 fi
-
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
