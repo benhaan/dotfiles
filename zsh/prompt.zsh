@@ -4,7 +4,7 @@ autoload colors && colors
 CURRENT_BG='NONE'
 SEGMENT_SEPARATOR='⮀'
 
-if (( $+commands[git]))
+if (($+commands[git]))
 then
   git="$commands[git]"
 else

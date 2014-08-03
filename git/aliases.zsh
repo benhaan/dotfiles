@@ -1,4 +1,4 @@
-if (( $+commands[git]))
+if (($+commands[git]))
 then
   git="$commands[git]"
 else
