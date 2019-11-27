@@ -1,4 +1,4 @@
-virtualenvwrapper_script="/opt/boxen/homebrew/bin/virtualenvwrapper.sh"
+virtualenvwrapper_script="/usr/local/bin/virtualenvwrapper.sh"
 
 if test -f $virtualenvwrapper_script
 then

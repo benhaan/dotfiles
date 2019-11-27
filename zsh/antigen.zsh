@@ -11,9 +11,7 @@ antigen bundle git
 antigen bundle github
 antigen bundle go
 antigen bundle heroku
-antigen bundle pip
 antigen bundle bundler
-antigen bundle capistrano
 antigen bundle command-not-found
 antigen bundle gem
 antigen bundle rails
