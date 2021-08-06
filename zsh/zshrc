@@ -43,4 +43,4 @@ source <(kubectl completion zsh)
 # added by travis gem
 [ -f /Users/ben.haan/.travis/travis.sh ] && source /Users/ben.haan/.travis/travis.sh
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/code/go/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
